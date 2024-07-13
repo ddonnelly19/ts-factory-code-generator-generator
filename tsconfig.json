@@ -1,13 +1,18 @@
 {
-  "compilerOptions": {
-    "target": "es2015",
-    "module": "commonjs",
-    "strict": true,
-    "esModuleInterop": true,
-    "downlevelIteration": true,
-    "rootDir": "./src",
-    "outDir": "./dist",
-    "declaration": true,
-    "plugins": [{ "transform": "ts-nameof", "type": "raw" }]
-  }
+	"compilerOptions": {
+		"target": "ESNext",
+		"module": "commonjs",
+		"strict": true,
+		"esModuleInterop": true,
+		"downlevelIteration": true,
+		"rootDir": "./src",
+		"outDir": "./dist",
+		"declaration": true,
+		"plugins": [
+			{
+				"transform": "ts-nameof",
+				"type": "raw"
+			}
+		]
+	}
 }

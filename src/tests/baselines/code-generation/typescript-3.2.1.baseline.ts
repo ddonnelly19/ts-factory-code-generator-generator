@@ -1377,7 +1377,7 @@ export function generateFactoryCode(ts: typeof import("typescript-3.2.1"), initi
         writer.indent(() => {
             writeNodeText(node.parameterName)
             writer.write(",").newLine();
-            writeNodeTextForTypeNode(node.type)
+            writeNodeTextForTypeNode(node.type!)
         });
         writer.write(")");
     }

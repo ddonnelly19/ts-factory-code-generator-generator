@@ -1,4 +1,4 @@
-import * as ts from "typescript-4.9.4";
+import ts from "typescript-4.9.4";
 
 const factory = ts.factory;
 [

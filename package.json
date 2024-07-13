@@ -1,55 +1,55 @@
 {
-  "name": "ts-factory-code-generator-generator",
-  "version": "0.7.0",
-  "description": "Generates code that generates TypeScript Compiler API factory code from an AST.",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
-  "scripts": {
-    "build": "npx ttsc",
-    "dopublish": "yarn build && echo \"Run: npm publish --otp\"",
-    "test": "cross-env TS_NODE_COMPILER=\"ttypescript\" TS_NODE_TRANSPILE_ONLY=\"true\" mocha",
-    "test:debug": "yarn run test --inspect-brk",
-    "format": "dprint fmt"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/dsherret/ts-factory-code-generator-generator.git"
-  },
-  "keywords": [
-    "typescript",
-    "compiler",
-    "API",
-    "factory",
-    "code",
-    "generator"
-  ],
-  "author": "David Sherret",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/dsherret/ts-factory-code-generator-generator/issues"
-  },
-  "homepage": "https://github.com/dsherret/ts-factory-code-generator-generator#readme",
-  "dependencies": {
-    "string-similarity": "^4.0.4",
-    "ts-morph": "^17.0.1"
-  },
-  "devDependencies": {
-    "@types/chai": "^4.3.0",
-    "@types/mocha": "^9.1.0",
-    "@types/node": "^17.0.21",
-    "@types/string-similarity": "^4.0.0",
-    "@types/ts-nameof": "^4.2.1",
-    "chai": "^4.3.6",
-    "cross-env": "^7.0.3",
-    "mocha": "^9.2.1",
-    "ts-nameof": "^5.0.0",
-    "ts-node": "^10.6.0",
-    "ttypescript": "^1.5.13",
-    "typescript": "^4.9.4",
-    "typescript-3.2.1": "npm:typescript@3.2.1",
-    "typescript-3.6.3": "npm:typescript@3.6.3",
-    "typescript-4.8.3": "npm:typescript@4.8.3",
-    "typescript-4.9.4": "npm:typescript@4.9.4",
-    "typescript-next": "npm:typescript@next"
-  }
+	"name": "ts-factory-code-generator-generator",
+	"version": "0.7.1",
+	"description": "Generates code that generates TypeScript Compiler API factory code from an AST.",
+	"main": "dist/index.js",
+	"types": "dist/index.d.ts",
+	"scripts": {
+		"build": "npx ttsc",
+		"dopublish": "yarn build && echo \"Run: npm publish --otp\"",
+		"test": "cross-env TS_NODE_COMPILER=\"ts-patch\" TS_NODE_TRANSPILE_ONLY=\"true\" mocha",
+		"test:debug": "yarn run test --inspect-brk",
+		"format": "dprint fmt"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/dsherret/ts-factory-code-generator-generator.git"
+	},
+	"keywords": [
+		"typescript",
+		"compiler",
+		"API",
+		"factory",
+		"code",
+		"generator"
+	],
+	"author": "David Sherret",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/dsherret/ts-factory-code-generator-generator/issues"
+	},
+	"homepage": "https://github.com/dsherret/ts-factory-code-generator-generator#readme",
+	"dependencies": {
+		"string-similarity": "^4.0.4",
+		"ts-morph": "^23.0.0"
+	},
+	"devDependencies": {
+		"@types/chai": "^4.3.16",
+		"@types/mocha": "^10.0.7",
+		"@types/node": "^20.14.10",
+		"@types/string-similarity": "^4.0.2",
+		"@types/ts-nameof": "^4.2.5",
+		"chai": "^5.1.1",
+		"cross-env": "^7.0.3",
+		"mocha": "^10.6.0",
+		"ts-nameof": "^5.0.0",
+		"ts-node": "^10.9.2",
+		"ts-patch": "^3.2.1",
+		"typescript": "^5.5.3",
+		"typescript-3.2.1": "npm:typescript@^3.2.1",
+		"typescript-3.6.3": "npm:typescript@^3.6.3",
+		"typescript-4.8.3": "npm:typescript@^4.8.3",
+		"typescript-4.9.4": "npm:typescript@^4.9.4",
+		"typescript-next": "npm:typescript@^5.6.0-dev.20240713"
+	}
 }
