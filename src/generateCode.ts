@@ -1,7 +1,7 @@
 import { CodeBlockWriter, FunctionDeclarationStructure, Node, Project, StructureKind, ts, Type } from "ts-morph";
 import { Factory, FactoryFunction, TsParameter } from "./compilerApi";
-export function generateCode<T extends string = "typescript">(typeScriptModuleName: T = "typescript" as T) {
-	const path = `../node_modules/${typeScriptModuleName}/lib/typescript.d.ts` as const;
+export function generateCode(typeScriptModuleName: string, path: string) {
+	//const path = `../node_modules/${typeScriptModuleName}/lib/typescript.d.ts` as const;
 	const factory = new Factory();
 	const project = new Project({ compilerOptions: { strictNullChecks: true } });
 	const newSourceFile = project.createSourceFile("____temp___.ts");

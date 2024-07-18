@@ -3,8 +3,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.generateCode = generateCode;
 const ts_morph_1 = require("ts-morph");
 const compilerApi_1 = require("./compilerApi");
-function generateCode(typeScriptModuleName = "typescript") {
-    const path = `../node_modules/${typeScriptModuleName}/lib/typescript.d.ts`;
+function generateCode(typeScriptModuleName, path) {
+    //const path = `../node_modules/${typeScriptModuleName}/lib/typescript.d.ts` as const;
     const factory = new compilerApi_1.Factory();
     const project = new ts_morph_1.Project({ compilerOptions: { strictNullChecks: true } });
     const newSourceFile = project.createSourceFile("____temp___.ts");
