@@ -2,8 +2,7 @@
 	"name": "ts-factory-code-generator-generator",
 	"version": "0.7.1",
 	"description": "Generates code that generates TypeScript Compiler API factory code from an AST.",
-	"main": "dist/index.js",
-	"types": "dist/index.d.ts",
+	"main": "src/index.ts",	
 	"scripts": {
 		"build": "npx ttsc",
 		"dopublish": "npm run build && echo \"Run: npm publish --otp\"",
