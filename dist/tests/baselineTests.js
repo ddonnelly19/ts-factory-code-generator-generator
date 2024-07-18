@@ -22,13 +22,16 @@ var __importStar = (this && this.__importStar) || function (mod) {
     __setModuleDefault(result, mod);
     return result;
 };
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 const chai_1 = require("chai");
 const fs = __importStar(require("fs"));
 const path = __importStar(require("path"));
 const ts_morph_1 = require("ts-morph");
-const ts363 = __importStar(require("typescript-3.6.3"));
-const ts494 = __importStar(require("typescript-4.9.4"));
+const typescript_3_6_3_1 = __importDefault(require("typescript-3.6.3"));
+const typescript_4_9_4_1 = __importDefault(require("typescript-4.9.4"));
 const generateCode_1 = require("../generateCode");
 const typescript_3_6_3_baseline_1 = require("./baselines/code-generation/typescript-3.6.3.baseline");
 const typescript_4_9_4_baseline_1 = require("./baselines/code-generation/typescript-4.9.4.baseline");
@@ -66,10 +69,10 @@ describe(nameof(typescript_4_9_4_baseline_1.generateFactoryCode), () => {
         // get generated code
         const languageFeaturesFileName = path.join(__dirname, "baselines/language-features.ts");
         const languageFeaturesText = fs.readFileSync(languageFeaturesFileName, { encoding: "utf8" });
-        const languageFeaturesSourceFile = ts494.createSourceFile("languageFeatures.ts", languageFeaturesText, ts494.ScriptTarget.Latest, false);
+        const languageFeaturesSourceFile = typescript_4_9_4_1.default.createSourceFile("languageFeatures.ts", languageFeaturesText, typescript_4_9_4_1.default.ScriptTarget.Latest, false);
         const result = `import * as ts from "typescript-4.9.4";\n\n`
             + "const factory = ts.factory;\n"
-            + (0, typescript_4_9_4_baseline_1.generateFactoryCode)(ts494, languageFeaturesSourceFile);
+            + (0, typescript_4_9_4_baseline_1.generateFactoryCode)(typescript_4_9_4_1.default, languageFeaturesSourceFile);
         // ensure no diagnostics
         ensureNoDiagnostics(result);
         // compare
@@ -84,8 +87,8 @@ describe(nameof(typescript_3_6_3_baseline_1.generateFactoryCode), () => {
         // get generated code
         const languageFeaturesFileName = path.join(__dirname, "baselines/language-features.ts");
         const languageFeaturesText = fs.readFileSync(languageFeaturesFileName, { encoding: "utf8" });
-        const languageFeaturesSourceFile = ts363.createSourceFile("languageFeatures.ts", languageFeaturesText, ts363.ScriptTarget.Latest, false);
-        const result = `import * as ts from "typescript-3.6.3";\n\n` + (0, typescript_3_6_3_baseline_1.generateFactoryCode)(ts363, languageFeaturesSourceFile);
+        const languageFeaturesSourceFile = typescript_3_6_3_1.default.createSourceFile("languageFeatures.ts", languageFeaturesText, typescript_3_6_3_1.default.ScriptTarget.Latest, false);
+        const result = `import * as ts from "typescript-3.6.3";\n\n` + (0, typescript_3_6_3_baseline_1.generateFactoryCode)(typescript_3_6_3_1.default, languageFeaturesSourceFile);
         // ensure no diagnostics
         ensureNoDiagnostics(result);
         // compare

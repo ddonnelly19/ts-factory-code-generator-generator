@@ -1,13 +1,14 @@
 import { CodeBlockWriter, FunctionDeclarationStructure, Node, Project, StructureKind, ts, Type } from "ts-morph";
 import { Factory, FactoryFunction, TsParameter } from "./compilerApi";
-export function generateCode(typeScriptModuleName = "typescript") {
+export function generateCode<T extends string = "typescript">(typeScriptModuleName: T = "typescript" as T) {
+	const path = `../node_modules/${typeScriptModuleName}/lib/typescript.d.ts` as const;
 	const factory = new Factory();
 	const project = new Project({ compilerOptions: { strictNullChecks: true } });
 	const newSourceFile = project.createSourceFile("____temp___.ts");
-	const tsSourceFile = project.addSourceFileAtPath(`node_modules/${typeScriptModuleName}/lib/typescript.d.ts`);
+	const tsSourceFile = project.addSourceFileAtPath(path);
 	const tsSymbol = tsSourceFile.getModuleOrThrow("ts").getSymbolOrThrow();
 	const nodeFactory = tsSymbol.getExport("NodeFactory");
-	const ts = require(`node_modules/${typeScriptModuleName}/lib/typescript.d.ts`)
+	const ts = require(path);
 
 	const kindToFactoryFunctions = getKindToFactoryFunctions();
 

@@ -6,9 +6,9 @@
 	"types": "dist/index.d.ts",
 	"scripts": {
 		"build": "npx ttsc",
-		"dopublish": "yarn build && echo \"Run: npm publish --otp\"",
+		"dopublish": "npm run build && echo \"Run: npm publish --otp\"",
 		"test": "cross-env TS_NODE_COMPILER=\"ts-patch\" TS_NODE_TRANSPILE_ONLY=\"true\" mocha",
-		"test:debug": "yarn run test --inspect-brk",
+		"test:debug": "npm run test --inspect-brk",
 		"format": "dprint fmt"
 	},
 	"repository": {
@@ -50,6 +50,7 @@
 		"typescript-3.6.3": "npm:typescript@^3.6.3",
 		"typescript-4.8.3": "npm:typescript@^4.8.3",
 		"typescript-4.9.4": "npm:typescript@^4.9.4",
+		"typescript-5.5.3": "npm:typescript@^5.5.3",
 		"typescript-next": "npm:typescript@^5.6.0-dev.20240713"
 	}
 }

@@ -4,13 +4,14 @@ exports.generateCode = generateCode;
 const ts_morph_1 = require("ts-morph");
 const compilerApi_1 = require("./compilerApi");
 function generateCode(typeScriptModuleName = "typescript") {
+    const path = `../node_modules/${typeScriptModuleName}/lib/typescript.d.ts`;
     const factory = new compilerApi_1.Factory();
     const project = new ts_morph_1.Project({ compilerOptions: { strictNullChecks: true } });
     const newSourceFile = project.createSourceFile("____temp___.ts");
-    const tsSourceFile = project.addSourceFileAtPath(`node_modules/${typeScriptModuleName}/lib/typescript.d.ts`);
+    const tsSourceFile = project.addSourceFileAtPath(path);
     const tsSymbol = tsSourceFile.getModuleOrThrow("ts").getSymbolOrThrow();
     const nodeFactory = tsSymbol.getExport("NodeFactory");
-    const ts = require(`node_modules/${typeScriptModuleName}/lib/typescript.d.ts`);
+    const ts = require(path);
     const kindToFactoryFunctions = getKindToFactoryFunctions();
     newSourceFile.addStatements([{
             kind: ts_morph_1.StructureKind.ImportDeclaration,

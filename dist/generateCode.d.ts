@@ -1,1 +1,1 @@
-export declare function generateCode(typeScriptModuleName?: string): string;
+export declare function generateCode<T extends string = "typescript">(typeScriptModuleName?: T): string;
