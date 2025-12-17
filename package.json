@@ -4,7 +4,7 @@
 	"description": "Generates code that generates TypeScript Compiler API factory code from an AST.",
 	"main": "src/index.ts",	
 	"scripts": {
-		"build": "npx ttsc",
+		"build": "npx tsc -p tsconfig.json",
 		"dopublish": "npm run build && echo \"Run: npm publish --otp\"",
 		"test": "cross-env TS_NODE_COMPILER=\"ts-patch\" TS_NODE_TRANSPILE_ONLY=\"true\" mocha",
 		"test:debug": "npm run test --inspect-brk",
@@ -30,21 +30,21 @@
 	"homepage": "https://github.com/dsherret/ts-factory-code-generator-generator#readme",
 	"dependencies": {
 		"string-similarity": "^4.0.4",
-		"ts-morph": "^23.0.0"
+		"ts-morph": "^27.0.2"
 	},
 	"devDependencies": {
-		"@types/chai": "^4.3.16",
-		"@types/mocha": "^10.0.7",
-		"@types/node": "^20.14.10",
+		"@types/chai": "^5.2.3",
+		"@types/mocha": "^10.0.10",
+		"@types/node": "^25.0.3",
 		"@types/string-similarity": "^4.0.2",
 		"@types/ts-nameof": "^4.2.5",
-		"chai": "^5.1.1",
-		"cross-env": "^7.0.3",
-		"mocha": "^10.6.0",
+		"chai": "^6.2.1",
+		"cross-env": "^10.1.0",
+		"mocha": "^11.7.5",
 		"ts-nameof": "^5.0.0",
 		"ts-node": "^10.9.2",
 		"ts-patch": "^3.2.1",
-		"typescript": "^5.5.3",
+		"typescript": "^5.9.3",
 		"typescript-3.2.1": "npm:typescript@^3.2.1",
 		"typescript-3.6.3": "npm:typescript@^3.6.3",
 		"typescript-4.8.3": "npm:typescript@^4.8.3",
